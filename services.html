@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YuwaTech | Services</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #5dade2 0%, #2e4053 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .navbar { background: #232946; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+    .brand { font-size: 2rem; font-weight: bold; color: #eebbc3; letter-spacing: 2px; }
+    .nav-links { list-style: none; display: flex; gap: 2rem; }
+    .nav-links li a { color: #fff; text-decoration: none; font-weight: 500; position: relative; padding-bottom: 4px; transition: color 0.2s; }
+    .nav-links li a::after { content: ''; display: block; height: 2px; width: 0; background: #eebbc3; position: absolute; left: 0; bottom: 0; transition: width 0.3s cubic-bezier(.4,0,.2,1); }
+    .nav-links li a:hover::after, .nav-links li a.active::after { width: 100%; }
+    .nav-links li a:hover, .nav-links li a.active { color: #eebbc3; }
+    .services-container { max-width: 1100px; margin: 2rem auto; padding: 2rem; background: #121629; border-radius: 18px; box-shadow: 0 4px 32px rgba(35,41,70,0.15); }
+    .service-section { margin-bottom: 3rem; }
+    .service-header { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1rem; }
+    .service-header img { width: 48px; height: 48px; }
+    .service-section h2 { color: #eebbc3; font-size: 2rem; margin: 0; }
+    .service-section ul { margin: 1rem 0 1.5rem 1.5rem; }
+    .service-section li { margin-bottom: 0.5rem; }
+    .service-section .examples, .service-section .tools, .service-section .pricing { margin: 0.7rem 0 0.7rem 0; }
+    .service-section .examples strong, .service-section .tools strong, .service-section .pricing strong { color: #eebbc3; }
+    .service-section .portfolio-sample { margin: 1rem 0; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .portfolio-sample img { width: 180px; border-radius: 12px; box-shadow: 0 2px 12px rgba(238,187,195,0.13); }
+    @media (max-width: 900px) { .services-container { padding: 1rem; } .service-header { flex-direction: column; align-items: flex-start; } }
+    @media (max-width: 600px) { .services-container { padding: 0.5rem; } .portfolio-sample img { width: 100px; } }
+  </style>
+</head>
+<body class="services-page">
+  <button class="back-btn" onclick="window.location.href='index.html'" aria-label="Back to Home">
+    &#8592;
+  </button>
+  <div class="services-container">
+    <h1 class="services-title">Our Services</h1>
+    <section class="service-block">
+      <h2>1. Cybersecurity</h2>
+      <p><strong>Overview:</strong> Cybersecurity involves protecting systems, networks, and data from digital attacks. It encompasses various services such as penetration testing, vulnerability assessments, and malware defense.</p>
+      <p><strong>How You Protect Clients' Data:</strong> We implement multi-layered security protocols, conduct regular security audits, and provide real-time monitoring to safeguard sensitive information.</p>
+      <ul><strong>Examples/Case Studies:</strong>
+        <li>Conducted a penetration test for a financial institution, identifying critical vulnerabilities that were subsequently patched, preventing potential data breaches.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>2. AI & Automation</h2>
+      <p><strong>Overview:</strong> Our AI services include automation of repetitive tasks, chatbot integration for customer service, and predictive analysis to forecast trends.</p>
+      <p><strong>How AI Can Help Businesses Scale:</strong> By automating routine tasks, businesses can focus on strategic initiatives, improve efficiency, and enhance customer engagement through personalized interactions.</p>
+      <ul><strong>Examples of AI Projects:</strong>
+        <li>Developed a chatbot for an e-commerce platform that increased customer engagement by 30% and reduced response time by 50%.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>3. Video Editing & Thumbnails</h2>
+      <p><strong>Overview:</strong> We offer professional video editing, graphic design, and thumbnail creation services to enhance visual content.</p>
+      <p><strong>Tools & Software Used:</strong> Adobe Premiere Pro, Final Cut Pro, Adobe Photoshop, and Canva.</p>
+      <p><strong>Portfolio/Samples:</strong> Showcase a variety of edited videos and thumbnails that highlight your editing style and creativity.</p>
+      <ul><strong>Pricing/Packages:</strong>
+        <li>Basic Package: $200 for up to 5 minutes of video.</li>
+        <li>Premium Package: $500 for up to 20 minutes of video with advanced effects.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>4. Web & App Design</h2>
+      <p><strong>Overview:</strong> We specialize in responsive web design and cross-platform app development for Android, iOS, and web applications.</p>
+      <p><strong>Tech Stack Used:</strong> React, Flutter, Node.js, and Firebase.</p>
+      <p><strong>Showcase Previous Projects:</strong> Display mockups and links to live projects that demonstrate your design capabilities and user experience focus.</p>
+    </section>
+    <section class="service-block">
+      <h2>5. Social Media Solutions</h2>
+      <p><strong>Overview:</strong> Our services include social media account setup, management, content creation, and analytics reporting.</p>
+      <p><strong>Branding and Marketing Strategies:</strong> We develop tailored strategies to enhance brand visibility and engagement across various platforms.</p>
+      <p><strong>Analytics and Growth Reports:</strong> Provide clients with detailed reports on social media performance, audience engagement, and growth metrics.</p>
+    </section>
+    <section class="service-block">
+      <h2>6. Search Engine Optimization (SEO)</h2>
+      <p><strong>Overview:</strong> SEO services focus on improving website visibility on search engines through keyword optimization, content creation, and backlink strategies.</p>
+      <p><strong>Benefits:</strong> Increased organic traffic, higher search rankings, and improved brand credibility.</p>
+      <ul><strong>Case Studies:</strong>
+        <li>Successfully improved a client's website ranking from page 5 to page 1 for targeted keywords within six months.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>7. Content Marketing</h2>
+      <p><strong>Overview:</strong> We create and distribute valuable content to attract and engage target audiences, driving profitable customer action.</p>
+      <p><strong>How It Helps:</strong> Establishes authority, builds trust, and enhances customer loyalty.</p>
+      <ul><strong>Examples:</strong>
+        <li>Developed a content strategy for a tech startup that resulted in a 40% increase in website traffic.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>8. Email Marketing</h2>
+      <p><strong>Overview:</strong> Our email marketing services include campaign design, list management, and performance tracking.</p>
+      <p><strong>Benefits:</strong> Direct communication with customers, higher conversion rates, and personalized marketing.</p>
+      <ul><strong>Case Studies:</strong>
+        <li>Launched an email campaign for a retail client that achieved a 25% open rate and a 10% conversion rate.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>9. E-commerce Solutions</h2>
+      <p><strong>Overview:</strong> We provide end-to-end e-commerce solutions, including website development, payment integration, and inventory management.</p>
+      <p><strong>Benefits:</strong> Streamlined online sales processes and improved customer experience.</p>
+      <ul><strong>Examples:</strong>
+        <li>Developed an e-commerce site for a fashion brand that increased online sales by 50% in the first quarter.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>10. Cloud Services</h2>
+      <p><strong>Overview:</strong> Our cloud services include cloud storage, computing, and migration solutions to enhance business operations.</p>
+      <p><strong>Benefits:</strong> Scalability, cost-effectiveness, and improved collaboration.</p>
+      <ul><strong>Case Studies:</strong>
+        <li>Assisted a client in migrating to the cloud, resulting in a 30% reduction in IT costs.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>11. Mobile App Development</h2>
+      <p><strong>Overview:</strong> We design and develop mobile applications tailored to client needs for both Android and iOS platforms.</p>
+      <p><strong>Tech Stack Used:</strong> React Native, Swift, Kotlin.</p>
+      <p><strong>Showcase Previous Projects:</strong> Highlight successful app launches and user feedback.</p>
+    </section>
+    <section class="service-block">
+      <h2>12. Graphic Design</h2>
+      <p><strong>Overview:</strong> Our graphic design services cover branding, marketing materials, and digital assets.</p>
+      <p><strong>Tools Used:</strong> Adobe Illustrator, CorelDRAW, and Canva.</p>
+      <p><strong>Portfolio/Samples:</strong> Display a range of design projects, including logos, brochures, and social media graphics.</p>
+    </section>
+    <section class="service-block">
+      <h2>13. IT Consulting</h2>
+      <p><strong>Overview:</strong> We provide expert IT consulting services to help businesses optimize their technology infrastructure.</p>
+      <p><strong>Benefits:</strong> Improved efficiency, reduced costs, and strategic technology planning.</p>
+      <ul><strong>Case Studies:</strong>
+        <li>Worked with a manufacturing company to streamline their IT processes, resulting in a 20% increase in productivity.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>14. Blockchain Development</h2>
+      <p><strong>Overview:</strong> Our blockchain services include smart contract development, decentralized application (DApp) creation, and blockchain consulting.</p>
+      <p><strong>Benefits:</strong> Enhanced security, transparency, and efficiency in transactions.</p>
+      <ul><strong>Examples:</strong>
+        <li>Developed a DApp for a client that improved transaction speed and reduced costs.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>15. Virtual Reality (VR) & Augmented Reality (AR)</h2>
+      <p><strong>Overview:</strong> We create immersive VR and AR experiences for training, marketing, and entertainment.</p>
+      <p><strong>Benefits:</strong> Enhanced user engagement and innovative marketing strategies.</p>
+      <ul><strong>Examples:</strong>
+        <li>Developed a VR training program for a corporate client that improved employee retention of information.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>16. Data Analytics</h2>
+      <p><strong>Overview:</strong> Our data analytics services help businesses make informed decisions through data collection, analysis, and visualization.</p>
+      <p><strong>Benefits:</strong> Improved decision-making, enhanced operational efficiency, and better customer insights.</p>
+      <ul><strong>Case Studies:</strong>
+        <li>Analyzed customer data for a retail client, leading to a 15% increase in sales through targeted marketing.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>17. User Experience (UX) Design</h2>
+      <p><strong>Overview:</strong> We focus on creating user-centered designs that enhance usability and satisfaction.</p>
+      <p><strong>Benefits:</strong> Improved user engagement and reduced bounce rates.</p>
+      <p><strong>Showcase Previous Projects:</strong> Highlight UX design projects with before-and-after comparisons.</p>
+    </section>
+    <section class="service-block">
+      <h2>18. Digital Marketing Strategy</h2>
+      <p><strong>Overview:</strong> We develop comprehensive digital marketing strategies tailored to client goals and target audiences.</p>
+      <p><strong>Benefits:</strong> Increased brand awareness, lead generation, and customer retention.</p>
+      <ul><strong>Examples:</strong>
+        <li>Created a digital marketing strategy for a startup that resulted in a 300% increase in leads.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>19. Online Reputation Management</h2>
+      <p><strong>Overview:</strong> Our services help businesses monitor and improve their online reputation through proactive strategies.</p>
+      <p><strong>Benefits:</strong> Enhanced brand image and customer trust.</p>
+      <ul><strong>Case Studies:</strong>
+        <li>Successfully managed a crisis for a client, restoring their online reputation within weeks.</li>
+      </ul>
+    </section>
+    <section class="service-block">
+      <h2>20. Training & Workshops</h2>
+      <p><strong>Overview:</strong> We offer training sessions and workshops on various digital skills, including SEO, social media marketing, and cybersecurity.</p>
+      <p><strong>Benefits:</strong> Empower employees with the skills needed to succeed in a digital landscape.</p>
+      <ul><strong>Examples:</strong>
+        <li>Conducted a workshop for a local business that resulted in improved social media engagement.</li>
+      </ul>
+    </section>
+  </div>
+  <div class="footer" style="margin-top:2rem;background:rgba(44,62,80,0.98);color:#fff;text-align:center;padding:0.7rem 0 0.5rem 0;font-size:1.1rem;border-radius:2rem 2rem 0 0;letter-spacing:1px;">
+    &copy; 2024 YuwaTech. Empowering Digital Nepal.
+  </div>
+</body>
+</html> 

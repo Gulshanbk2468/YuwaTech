@@ -1,0 +1,11 @@
+--2025-06-20 21:00:16--  https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format
+Resolving images.unsplash.com (images.unsplash.com)... 199.232.102.208, 2a04:4e42:59::720
+Connecting to images.unsplash.com (images.unsplash.com)|199.232.102.208|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1919944 (1.8M) [image/jpeg]
+Saving to: ‘home-hero.jpg’
+
+home-hero.jpg             0%[                               ]       0  --.-KB/s               home-hero.jpg            14%[===>                           ] 271.40K  1.30MB/s               home-hero.jpg            97%[=============================> ]   1.78M  4.40MB/s               home-hero.jpg           100%[==============================>]   1.83M  4.50MB/s    in 0.4s    
+
+2025-06-20 21:00:17 (4.50 MB/s) - ‘home-hero.jpg’ saved [1919944/1919944]
+

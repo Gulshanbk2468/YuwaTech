@@ -7,11 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body { 
-      margin: 0; 
-      font-family: 'Montserrat', Arial, sans-serif; 
-      background: #181a1b; 
-      color: #f5f6fa; 
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #fff;
+      color: #181a1b;
+    }
+    main, .navbar, .footer {
+      position: relative;
+      z-index: 1;
     }
     
     .navbar {
@@ -88,30 +92,54 @@
     }
     
     .hero {
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between;
-      min-height: 70vh; 
-      max-width: 1200px; 
-      margin: 3rem auto 0 auto; 
-      padding: 2rem 1rem;
-      background: #232946;
-      color: #f5f6fa;
-      border-radius: 24px; 
-      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 2rem 2rem 4rem;
+      background: none;
+      color: #181a1b;
       gap: 2rem;
     }
-    
-    .hero-content { 
-      flex: 1; 
+    .hero-content {
+      flex: 1;
+      max-width: 50vw;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 420px;
+      padding-bottom: 2rem;
     }
+    .hero-image {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      height: auto;
+    }
+    .hero-image img {
+      height: 100%;
+      max-height: 420px;
+      width: auto;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(35,41,70,0.10);
+      background: #fff;
+      object-fit: contain;
+      display: block;
+      margin-top: 0.5rem;
+      transition: none;
+    }
+    
     .hero-title { 
       font-size: 2.8rem; 
       font-weight: 900; 
-      color: #fff; 
+      color: #000; 
       margin-bottom: 1.2rem; 
       animation: cosmicFadeIn 1.2s cubic-bezier(.25,.8,.25,1) both;
-      text-shadow: 0 0 24px #7f53ac88, 0 2px 12px #23294644;
+      text-shadow: none;
     }
     .hero-animated { 
       font-size: 1.3rem; 
@@ -123,33 +151,31 @@
     }
     .hero-desc { 
       font-size: 1.1rem; 
-      color: #fff; 
+      color: #000; 
       margin-bottom: 2.2rem; 
     }
     .cta-btn {
-      background: linear-gradient(90deg, #00b4d8 0%, #3efcbf 100%);
-      color: #181a1b;
-      font-weight: bold;
+      background: #232946;
+      color: #fff;
+      font-weight: 600;
       border: none;
-      border-radius: 24px;
-      padding: 0.9rem 2.2rem;
-      font-size: 1.1rem;
+      border-radius: 999px;
+      padding: 0.5em 0.8em;
+      line-height: 1.2;
+      height: auto;
+      font-size: 0.95rem;
       cursor: pointer;
-      box-shadow: 0 2px 12px rgba(0,180,216,0.13);
-      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 1px 4px rgba(35,41,70,0.08);
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
       text-decoration: none;
+      display: inline-block;
+      letter-spacing: 0.2px;
     }
     .cta-btn:hover {
-      background: linear-gradient(90deg, #3efcbf 0%, #00b4d8 100%);
+      background: #00b4d8;
       color: #232946;
-    }
-    
-    .hero-image { 
-      flex: 1; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      position: relative;
+      box-shadow: 0 2px 8px rgba(0,180,216,0.13);
+      text-decoration: none;
     }
     
     .hero-image::before {
@@ -168,26 +194,6 @@
     @keyframes pulse {
       0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
       50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
-    }
-    
-    .hero-image img { 
-      width: 100%; 
-      max-width: 400px; 
-      border-radius: 18px; 
-      box-shadow: 0 4px 24px rgba(35,41,70,0.10);
-      transition: all 0.3s;
-      filter: drop-shadow(0 0 20px rgba(238, 187, 195, 0.3));
-      animation: floatImage 3s ease-in-out infinite;
-    }
-    
-    @keyframes floatImage {
-      0%, 100% { transform: translateY(0px) rotateY(0deg); }
-      50% { transform: translateY(-15px) rotateY(8deg); }
-    }
-    
-    .hero-image img:hover {
-      transform: scale(1.08) rotateY(15deg);
-      filter: drop-shadow(0 0 30px rgba(238, 187, 195, 0.6));
     }
     
     /* Why Choose Us Section */
@@ -540,12 +546,28 @@
     }
     
     @media (max-width: 900px) {
-      .hero { 
-        flex-direction: column-reverse; 
-        text-align: center; 
-        gap: 1.5rem; 
+      .hero {
+        flex-direction: column-reverse;
+        text-align: left;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
       }
-      .hero-image img { max-width: 300px; }
+      .hero-content {
+        max-width: 100vw;
+        text-align: left;
+        min-height: unset;
+        padding-bottom: 0;
+      }
+      .hero-image {
+        justify-content: center;
+        margin-bottom: 2rem;
+        align-items: center;
+      }
+      .hero-image img {
+        max-width: 90vw;
+        max-height: 260px;
+        height: auto;
+      }
       .navbar { flex-direction: column; gap: 1.2rem; padding: 1.2rem 1rem; }
     }
     
@@ -595,7 +617,7 @@
         <a href="services.html" class="cta-btn">See Our Services</a>
       </div>
       <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Group working on laptop">
+        <img src="09.jpg" alt="Tech illustration">
       </div>
     </section>
 

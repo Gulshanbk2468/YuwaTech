@@ -10,8 +10,8 @@
     body {
       margin: 0;
       font-family: 'Montserrat', Arial, sans-serif;
-      background: #f5f6fa;
-      color: #232946;
+      background: #181a1b;
+      color: #f5f6fa;
       line-height: 1.6;
     }
     
@@ -83,68 +83,53 @@
       margin-bottom: 4rem;
     }
     
-    .about-card {
-      background: white;
-      border-radius: 20px;
-      padding: 2.5rem;
-      box-shadow: 0 10px 30px rgba(35,41,70,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+    .about-card, .team-member {
+      background: #2a2e3a;
+      color: #f5f6fa;
+      border-radius: 18px;
+      border-left: 6px solid #3efcbf;
+      padding: 2.2rem 2rem 2rem 2.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: none;
+      transition: none;
+      animation: none;
       position: relative;
-      overflow: hidden;
     }
-    
-    .about-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(238, 187, 195, 0.1), transparent);
-      transition: left 0.5s;
+    .about-card h3, .team-member h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #3efcbf;
+      margin-bottom: 0.7rem;
+      margin-top: 0;
     }
-    
-    .about-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(35,41,70,0.15);
-    }
-    
-    .about-card:hover::before {
-      left: 100%;
-    }
-    
-    .card-icon {
-      width: 80px;
-      height: 80px;
+    .about-card .card-icon, .team-member .member-avatar {
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      background: linear-gradient(45deg, #eebbc3, #232946);
+      background: linear-gradient(135deg, #00b4d8 0%, #3efcbf 100%);
+      color: #232946;
+      font-size: 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
+      margin-top: 0.2rem;
     }
-    
-    .card-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #232946;
-      margin-bottom: 1rem;
-    }
-    
-    .card-content {
-      color: #666;
-      line-height: 1.8;
+    .about-card .card-content, .team-member .member-role {
+      color: #e0e0e0;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 0;
     }
     
     /* Team Section */
     .team-section {
-      background: linear-gradient(to top right, #224193, #6F9BD1);
+      background: #232946;
+      color: #f5f6fa;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
       padding: 4rem 2rem;
       margin: 3rem 0;
       border-radius: 20px;
-      color: white;
       text-align: center;
     }
     
@@ -165,23 +150,11 @@
       margin-right: auto;
     }
     
-    .team-member {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 2rem;
-      transition: transform 0.3s;
-    }
-    
-    .team-member:hover {
-      transform: translateY(-5px);
-    }
-    
     .member-avatar {
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      background: linear-gradient(45deg, #eebbc3, #232946);
+      background: linear-gradient(45deg, #00b4d8, #ffb703);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -219,7 +192,7 @@
       left: 0;
       right: 0;
       height: 2px;
-      background: linear-gradient(90deg, #eebbc3, #232946, #eebbc3);
+      background: linear-gradient(90deg, #ffb703 0%, #00b4d8 100%);
     }
     
     .footer-container {
@@ -231,7 +204,7 @@
     }
     
     .footer-section h3 {
-      color: #eebbc3;
+      color: #3efcbf;
       font-size: 1.3rem;
       margin-bottom: 1rem;
       position: relative;
@@ -244,7 +217,7 @@
       left: 0;
       width: 30px;
       height: 2px;
-      background: #eebbc3;
+      background: linear-gradient(90deg, #3efcbf 0%, #00b4d8 100%);
     }
     
     .footer-section p, .footer-section li {
@@ -264,7 +237,7 @@
     }
     
     .footer-section li:hover {
-      color: #eebbc3;
+      color: #ffb703;
     }
     
     .social-links {
@@ -277,7 +250,7 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: linear-gradient(45deg, #eebbc3, #232946);
+      background: linear-gradient(45deg, #00b4d8, #ffb703);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -345,6 +318,42 @@
     .back-btn:hover {
       background: rgba(35, 41, 70, 1);
       transform: scale(1.1);
+    }
+
+    .navbar {
+      background: #232946;
+      color: #00b4d8;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    }
+    .nav-links li a {
+      color: #00b4d8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      position: relative;
+      padding-bottom: 6px;
+      transition: color 0.2s;
+    }
+    .nav-links li a.active,
+    .nav-links li a:hover {
+      color: #3efcbf;
+    }
+    .nav-links li a::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, #3efcbf 0%, #00b4d8 100%);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-radius: 2px;
+      transition: width 0.3s cubic-bezier(.4,0,.2,1), background 0.3s;
+    }
+    .nav-links li a.active::after,
+    .nav-links li a:hover::after {
+      width: 100%;
+      background: linear-gradient(90deg, #3efcbf 0%, #00b4d8 100%);
     }
   </style>
 </head>

@@ -10,8 +10,8 @@
         body {
             margin: 0;
             font-family: 'Montserrat', Arial, sans-serif;
-            background: #f5f6fa;
-            color: #232946;
+            background: #181a1b;
+            color: #f5f6fa;
         }
 
         .back-btn {
@@ -39,10 +39,11 @@
         }
 
         .portfolio-hero {
-            background: linear-gradient(135deg, #232946 0%, #eebbc3 100%);
+            background: #232946;
+            color: #f5f6fa;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
             padding: 5rem 2rem 4rem;
             text-align: center;
-            color: white;
             position: relative;
             overflow: hidden;
         }
@@ -52,7 +53,7 @@
             font-weight: 900;
             margin-bottom: 0.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInDown 1s;
+            animation: cosmicFadeIn 1.2s cubic-bezier(.25,.8,.25,1) both;
         }
 
         .portfolio-hero p {
@@ -73,38 +74,60 @@
         }
 
         .project-card {
-            background: white;
-            border-radius: 20px;
+            background: #232946;
+            color: #f5f6fa;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            border-radius: 22px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(35,41,70,0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform: translateY(0);
+            border: 2.5px solid transparent;
+            border-image: linear-gradient(90deg, #232946 0%, #5dade2 40%, #7f53ac 70%, #f452c8 100%);
+            border-image-slice: 1;
+            transition: box-shadow 0.3s, transform 0.3s, border 0.3s;
+            position: relative;
+            animation: floatCard 4s ease-in-out infinite alternate, cosmicGlow 6s ease-in-out infinite alternate;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 7px;
+            background: linear-gradient(90deg, #232946 0%, #5dade2 40%, #7f53ac 70%, #f452c8 100%);
+            border-radius: 22px 22px 0 0;
+            z-index: 2;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(35,41,70,0.2);
+            box-shadow: 0 16px 48px rgba(35,41,70,0.18), 0 2px 12px rgba(35,41,70,0.13);
+            border: 2.5px solid transparent;
+            border-image: linear-gradient(90deg, #f452c8 0%, #7f53ac 40%, #5dade2 70%, #232946 100%);
+            border-image-slice: 1;
+            transform: translateY(-8px) scale(1.025);
         }
 
         .project-image {
             width: 100%;
             height: 220px;
             object-fit: cover;
+            border-bottom: 2px solid #eaf6fb;
+            background: #eaf6fb;
             transition: transform 0.4s;
+            animation: floatIcon 5s ease-in-out infinite alternate;
         }
 
         .project-card:hover .project-image {
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
 
         .project-content {
-            padding: 1.5rem;
+            padding: 1.7rem 1.5rem 1.2rem 1.5rem;
         }
 
         .project-title {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: #232946;
             margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
         }
 
         .project-tags {
@@ -112,32 +135,44 @@
         }
 
         .project-tags span {
-            background: #eebbc3;
-            color: #232946;
-            padding: 0.3rem 0.8rem;
+            background: #3efcbf;
+            color: #181a1b;
+            padding: 0.35rem 1rem;
             border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 700;
             margin-right: 0.5rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 1px 4px rgba(35,41,70,0.07);
+            border: none;
+            animation: floatIcon 5s ease-in-out infinite alternate;
         }
 
         .project-description {
-            color: #666;
-            line-height: 1.6;
+            color: #232946;
+            line-height: 1.7;
             margin-bottom: 1.5rem;
+            font-size: 1.05rem;
         }
 
         .project-link {
-            color: #232946;
+            color: #5dade2;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 1.05rem;
             position: relative;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
         }
 
         .project-link::after {
             content: '→';
             margin-left: 8px;
             transition: margin-left 0.3s;
+        }
+
+        .project-link:hover {
+            color: #232946;
         }
 
         .project-link:hover::after {
@@ -152,6 +187,27 @@
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes cosmicFadeIn {
+            0% { opacity: 0; transform: translateY(40px) scale(0.95);}
+            100% { opacity: 1; transform: translateY(0) scale(1);}
+        }
+
+        @keyframes floatCard {
+            0% { transform: translateY(0px);}
+            100% { transform: translateY(-12px);}
+        }
+
+        @keyframes cosmicGlow {
+            0% { box-shadow: 0 0 24px 0 #7f53ac55, 0 2px 12px #23294622;}
+            50% { box-shadow: 0 0 48px 8px #f452c888, 0 2px 24px #5dade288;}
+            100% { box-shadow: 0 0 24px 0 #7f53ac55, 0 2px 12px #23294622;}
+        }
+
+        @keyframes floatIcon {
+            0% { transform: translateY(0);}
+            100% { transform: translateY(-10px);}
         }
 
         /* Footer */
@@ -249,6 +305,42 @@
             padding-top: 2rem;
             border-top: 1px solid #333;
             color: #999;
+        }
+
+        .navbar {
+            background: #232946;
+            color: #00b4d8;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+        }
+        .nav-links li a {
+            color: #00b4d8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            padding-bottom: 6px;
+            transition: color 0.2s;
+        }
+        .nav-links li a.active,
+        .nav-links li a:hover {
+            color: #3efcbf;
+        }
+        .nav-links li a::after {
+            content: '';
+            display: block;
+            height: 3px;
+            width: 0;
+            background: linear-gradient(90deg, #3efcbf 0%, #00b4d8 100%);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border-radius: 2px;
+            transition: width 0.3s cubic-bezier(.4,0,.2,1), background 0.3s;
+        }
+        .nav-links li a.active::after,
+        .nav-links li a:hover::after {
+            width: 100%;
+            background: linear-gradient(90deg, #3efcbf 0%, #00b4d8 100%);
         }
     </style>
 </head>

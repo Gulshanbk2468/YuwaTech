@@ -11,7 +11,8 @@
       min-height: 100vh;
       margin: 0;
       font-family: 'Montserrat', Arial, sans-serif;
-      background: linear-gradient(135deg, #5dade2 0%, #2e4053 100%);
+      background: #181a1b;
+      color: #f5f6fa;
       display: flex;
       flex-direction: column;
     }
@@ -29,6 +30,7 @@
       font-weight: 900;
       letter-spacing: 1px;
       margin-bottom: 0.5rem;
+      color: #fff;
     }
     .contact-hero p {
       font-size: 1.2rem;
@@ -46,10 +48,10 @@
       animation: fadeInUp 1s;
         }
         .contact-card {
-      background: rgba(255,255,255,0.98);
+      background: #232946;
       flex: 1 1 350px;
       border-radius: 2rem;
-      box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
       padding: 2.5rem 2rem 2rem 2rem;
       display: flex;
       flex-direction: column;
@@ -59,7 +61,7 @@
       overflow: hidden;
         }
     .contact-card h2 {
-      color: #2e4053;
+      color: #f5f6fa;
       font-size: 1.5rem;
       font-weight: 800;
       margin-bottom: 1.5rem;
@@ -70,7 +72,7 @@
       box-sizing: border-box;
     }
     .contact-form label {
-      color: #2e4053;
+      color: #f5f6fa;
       font-weight: 600;
       font-size: 1rem;
       margin-bottom: 0.3rem;
@@ -101,8 +103,8 @@
     }
     .contact-form button {
       width: 100%;
-      background: linear-gradient(90deg, #5dade2 0%, #6c47e6 100%);
-      color: #fff;
+      background: linear-gradient(90deg, #00b4d8 0%, #3efcbf 100%);
+      color: #181a1b;
       font-weight: 800;
       font-size: 1.1rem;
       border: none;
@@ -116,7 +118,8 @@
       display: block;
     }
     .contact-form button:hover {
-      background: linear-gradient(90deg, #6c47e6 0%, #5dade2 100%);
+      background: linear-gradient(90deg, #3efcbf 0%, #00b4d8 100%);
+      color: #232946;
       transform: translateY(-2px) scale(1.03);
     }
     .map-section {
@@ -124,14 +127,14 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: #eaf6fb;
+      background: #232946;
       border-radius: 2rem;
-      box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
       padding: 2rem 1.5rem 1.5rem 1.5rem;
       min-width: 0;
     }
     .map-section h3 {
-      color: #2e4053;
+      color: #f5f6fa;
       font-size: 1.1rem;
       font-weight: 700;
       margin: 0 0 0.7rem 0.5rem;
@@ -152,8 +155,10 @@
       justify-content: center;
       align-items: center;
       gap: 2.5em;
-      background: none;
-      box-shadow: none;
+      background: #232946;
+      color: #f5f6fa;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      border-radius: 1rem;
       padding: 0;
       z-index: 10;
       font-size: 1.12rem;
@@ -166,11 +171,11 @@
       gap: 0.7rem;
       font-size: 1.05em;
       white-space: nowrap;
-      color: #fff;
+      color: #f5f6fa;
       font-weight: 500;
     }
     .contact-info-item i {
-      color: #5dade2;
+      color: #00b4d8;
       font-size: 1.3rem;
     }
     .footer {
@@ -186,6 +191,27 @@
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: none; }
+    }
+    @keyframes cosmicFadeIn {
+      0% { opacity: 0; transform: translateY(40px) scale(0.95);}
+      100% { opacity: 1; transform: translateY(0) scale(1);}
+    }
+    @keyframes floatBtn {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+    @keyframes cosmicGlow {
+      0% { box-shadow: 0 0 24px 0 #7f53ac55, 0 2px 12px #23294622;}
+      50% { box-shadow: 0 0 48px 8px #f452c888, 0 2px 24px #5dade288;}
+      100% { box-shadow: 0 0 24px 0 #7f53ac55, 0 2px 12px #23294622;}
+    }
+    @keyframes floatMap {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+    @keyframes floatIcon {
+      0% { transform: translateY(0);}
+      100% { transform: translateY(-10px);}
     }
     @media (max-width: 1100px) {
       .contact-main-row { flex-direction: column; gap: 2rem; }
@@ -219,6 +245,41 @@
       color: #fff;
       transform: scale(1.08);
         }
+    .navbar {
+      background: #232946;
+      color: #00b4d8;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    }
+    .nav-links li a {
+      color: #00b4d8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      position: relative;
+      padding-bottom: 6px;
+      transition: color 0.2s;
+    }
+    .nav-links li a.active,
+    .nav-links li a:hover {
+      color: #3efcbf;
+    }
+    .nav-links li a::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, #3efcbf 0%, #00b4d8 100%);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-radius: 2px;
+      transition: width 0.3s cubic-bezier(.4,0,.2,1), background 0.3s;
+    }
+    .nav-links li a.active::after,
+    .nav-links li a:hover::after {
+      width: 100%;
+      background: linear-gradient(90deg, #3efcbf 0%, #00b4d8 100%);
+    }
     </style>
 </head>
 <body>

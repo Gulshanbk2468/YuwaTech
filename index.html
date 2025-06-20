@@ -155,8 +155,8 @@
       margin-bottom: 2.2rem; 
     }
     .cta-btn {
-      background: #232946;
-      color: #fff;
+      background: none;
+      color: #e53935;
       font-weight: 600;
       border: none;
       border-radius: 999px;
@@ -165,35 +165,26 @@
       height: auto;
       font-size: 0.95rem;
       cursor: pointer;
-      box-shadow: 0 1px 4px rgba(35,41,70,0.08);
-      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      box-shadow: none;
+      transition: color 0.2s;
       text-decoration: none;
       display: inline-block;
       letter-spacing: 0.2px;
+      position: relative;
     }
     .cta-btn:hover {
-      background: #00b4d8;
-      color: #232946;
-      box-shadow: 0 2px 8px rgba(0,180,216,0.13);
-      text-decoration: none;
+      color: #e53935;
     }
     
-    .hero-image::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 120%;
-      height: 120%;
-      background: radial-gradient(circle, rgba(238, 187, 195, 0.1) 0%, transparent 70%);
-      animation: pulse 2s ease-in-out infinite;
-      z-index: -1;
+    .cta-arrow {
+      font-size: 1.1em;
+      margin-left: 0.3em;
+      color: #000;
+      vertical-align: middle;
+      transition: margin-left 0.2s;
     }
-    
-    @keyframes pulse {
-      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-      50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+    .cta-btn:hover .cta-arrow {
+      margin-left: 0.5em;
     }
     
     /* Why Choose Us Section */
@@ -614,7 +605,7 @@
         <h1 class="hero-title">All Digital Solutions for Students & Startups</h1>
         <div class="hero-animated" id="typewriter"></div>
         <div class="hero-desc">We help you grow with <b>video editing</b>, <b>web development</b>, <b>cybersecurity</b>, <b>social media</b>, and more. Young, creative, and affordable—TechYuwaa is your one-stop digital partner.</div>
-        <a href="services.html" class="cta-btn">See Our Services</a>
+        <a href="services.html" class="cta-btn">See Our Services <span class="cta-arrow">→</span></a>
       </div>
       <div class="hero-image">
         <img src="09.jpg" alt="Tech illustration">

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About YuwaTech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #f5f6fa;
+      color: #232946;
+      line-height: 1.6;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, #232946 0%, #eebbc3 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      animation: gridMove 20s linear infinite;
+    }
+    
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(10px, 10px); }
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      min-height: 4rem;
+      background: linear-gradient(45deg, #fff, #eebbc3, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      min-height: 2rem;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+    
+    /* Main Content */
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    
+    .about-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(35,41,70,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(238, 187, 195, 0.1), transparent);
+      transition: left 0.5s;
+    }
+    
+    .about-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(35,41,70,0.15);
+    }
+    
+    .about-card:hover::before {
+      left: 100%;
+    }
+    
+    .card-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #eebbc3, #232946);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #232946;
+      margin-bottom: 1rem;
+    }
+    
+    .card-content {
+      color: #666;
+      line-height: 1.8;
+    }
+    
+    /* Team Section */
+    .team-section {
+      background: linear-gradient(to top right, #224193, #6F9BD1);
+      padding: 4rem 2rem;
+      margin: 3rem 0;
+      border-radius: 20px;
+      color: white;
+      text-align: center;
+    }
+    
+    .team-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .team-member {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: transform 0.3s;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+    
+    .member-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #eebbc3, #232946);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 0 auto 1rem;
+    }
+    
+    .member-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .member-role {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, #232946 0%, #1a1f2e 100%);
+      color: #fff;
+      padding: 3rem 2rem 1rem;
+      margin-top: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #eebbc3, #232946, #eebbc3);
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer-section h3 {
+      color: #eebbc3;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: #eebbc3;
+    }
+    
+    .footer-section p, .footer-section li {
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-section li {
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    
+    .footer-section li:hover {
+      color: #eebbc3;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #eebbc3, #232946);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(238, 187, 195, 0.4);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #333;
+      color: #999;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 1.5rem;
+      color: #fff;
+      background: rgba(35, 41, 70, 0.8);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(35,41,70,0.2);
+      transition: all 0.3s;
+    }
+
+    .back-btn:hover {
+      background: rgba(35, 41, 70, 1);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-btn" aria-label="Back to Home">&#8592;</a>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title" id="hero-title"></h1>
+      <p class="hero-subtitle" id="hero-subtitle"></p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="card-icon">🚀</div>
+        <h3 class="card-title">Our Mission</h3>
+        <p class="card-content">
+          To empower students and startups with cutting-edge digital solutions, making technology accessible and affordable for everyone. We believe in the power of young minds and innovative ideas.
+        </p>
+      </div>
+      
+      <div class="about-card">
+        <div class="card-icon">🎯</div>
+        <h3 class="card-title">Our Vision</h3>
+        <p class="card-content">
+          To become the leading digital partner for students and startups in Nepal, fostering innovation and digital transformation across the country. We envision a future where every idea has the technology to thrive.
+        </p>
+      </div>
+      
+      <div class="about-card">
+        <div class="card-icon">💡</div>
+        <h3 class="card-title">Our Values</h3>
+        <p class="card-content">
+          Innovation, creativity, affordability, and excellence drive everything we do. We value collaboration, continuous learning, and delivering solutions that exceed expectations while staying within budget.
+        </p>
+      </div>
+    </div>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <h2 class="team-title">Meet Our Team</h2>
+      <p>Six passionate students from Class 12, united by a common goal to revolutionize digital services in Nepal.</p>
+      
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-avatar">A</div>
+          <h4 class="member-name">Gulshan Bk</h4>
+          <p class="member-role">CEO & Web Developer</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="member-avatar">P</div>
+          <h4 class="member-name">Priya Patel</h4>
+          <p class="member-role">Video Editor & Designer</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="member-avatar">R</div>
+          <h4 class="member-name">Sagar Bk</h4>
+          <p class="member-role">Cybersecurity Expert</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="member-avatar">S</div>
+          <h4 class="member-name">Sita Thapa</h4>
+          <p class="member-role">Social Media Manager</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="member-avatar">N</div>
+          <h4 class="member-name">Ghanashyam Ku.Gupta</h4>
+          <p class="member-role">AI & Automation</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="member-avatar">M</div>
+          <h4 class="member-name">Maya Tamang</h4>
+          <p class="member-role">Content Creator</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>We are a team of passionate students dedicated to revolutionizing digital services in Nepal.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: info@yuwa.tech</p>
+        <p>Phone: +977 9841234567</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul class="social-links">
+          <li><a href="https://www.facebook.com/yuwa.tech" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="https://twitter.com/yuwa.tech" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com/yuwa.tech" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://www.linkedin.com/company/yuwa.tech" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2024 YuwaTech. Empowering Digital Nepal.
+    </div>
+  </footer>
+
+  <script>
+    function typewriter(element, text, callback, speed = 80) {
+      let i = 0;
+      element.innerHTML = "";
+      
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        } else if (callback) {
+          callback();
+        }
+      }
+      type();
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const heroTitle = document.getElementById('hero-title');
+      const heroSubtitle = document.getElementById('hero-subtitle');
+      
+      // Set title directly without typewriter effect
+      heroTitle.innerHTML = "About YuwaTech";
+      
+      // Use typewriter for the subtitle after a short delay
+      setTimeout(() => {
+        typewriter(heroSubtitle, "We are a passionate team of young innovators dedicated to making technology accessible and affordable for students and startups.", null, 50);
+      }, 500);
+    });
+  </script>
+</body>
+</html> 

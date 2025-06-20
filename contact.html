@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact YuwaTech</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
     body {
       min-height: 100vh;
       margin: 0;
@@ -41,11 +41,11 @@
       gap: 2.5rem;
       max-width: 1100px;
       margin: 0 auto;
-      width: 100%;
+            width: 100%;
       z-index: 2;
       animation: fadeInUp 1s;
-    }
-    .contact-card {
+        }
+        .contact-card {
       background: rgba(255,255,255,0.98);
       flex: 1 1 350px;
       border-radius: 2rem;
@@ -57,7 +57,7 @@
       min-width: 0;
       box-sizing: border-box;
       overflow: hidden;
-    }
+        }
     .contact-card h2 {
       color: #2e4053;
       font-size: 1.5rem;
@@ -93,11 +93,11 @@
       resize: vertical;
       min-height: 90px;
       max-height: 200px;
-    }
+        }
     .contact-form input:focus, .contact-form textarea:focus {
       border-color: #6c47e6;
       box-shadow: 0 0 0 2px #eaf6fb;
-      outline: none;
+            outline: none;
     }
     .contact-form button {
       width: 100%;
@@ -218,15 +218,15 @@
       background: rgba(44,62,80,0.85);
       color: #fff;
       transform: scale(1.08);
-    }
-  </style>
+        }
+    </style>
 </head>
 <body>
   <a href="index.html" class="back-btn" aria-label="Back to Home">&#8592;</a>
   <div class="contact-hero">
-    <h1>Contact <span style="color:#5dade2">YuwaTech</span></h1>
-    <p>We'd love to hear from you! Let's connect and build something amazing together.</p>
-  </div>
+    <h1><span id="contact-typewriter"></span></h1>
+    <p><span id="subtitle-typewriter"></span></p>
+        </div>
   <div class="contact-main-row">
     <div class="contact-card">
       <h2>Send Us a Message</h2>
@@ -240,29 +240,73 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="4" required></textarea>
         <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-      </form>
-    </div>
+                </form>
+            </div>
     <div class="map-section">
       <h3>Find Us on the Map</h3>
       <div class="map-container" id="map"></div>
-    </div>
-  </div>
+                    </div>
+                </div>
   <div class="contact-info-bar">
-    <div class="contact-info-item"><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</div>
-    <div class="contact-info-item"><i class="fas fa-phone-alt"></i> +977 9800000000</div>
+    <div class="contact-info-item"><i class="fas fa-map-marker-alt"></i> Pokhara, Nepal</div>
+    <div class="contact-info-item"><i class="fas fa-phone-alt"></i> +977 9805000000</div>
     <div class="contact-info-item"><i class="fas fa-envelope"></i> hello@yuwatech.com</div>
     <div class="contact-info-item"><i class="fas fa-clock"></i> Sun-Fri: 9am-6pm</div>
-  </div>
+                    </div>
   <div class="footer">
     &copy; 2024 YuwaTech. Empowering Digital Nepal.
-  </div>
+                </div>
   <script>
-    function initMap() {
+    // Typewriter effect for "Get in Touch"
+    function typeContactTitle() {
+      const typewriterElement = document.getElementById('contact-typewriter');
+      const text = 'Get in Touch';
+      let charIndex = 0;
+      
+      function typeChar() {
+        if (charIndex < text.length) {
+          typewriterElement.innerHTML += text.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeChar, 80);
+        } else {
+          // Start subtitle typewriter after title is complete
+          setTimeout(typeSubtitle, 300);
+        }
+      }
+      
+      typewriterElement.innerHTML = '';
+      setTimeout(typeChar, 300);
+    }
+    
+    // Typewriter effect for subtitle
+    function typeSubtitle() {
+      const subtitleElement = document.getElementById('subtitle-typewriter');
+      const text = "We'd love to hear from you! Let's connect and build something amazing together.";
+      let charIndex = 0;
+      
+      function typeChar() {
+        if (charIndex < text.length) {
+          subtitleElement.innerHTML += text.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeChar, 50);
+        }
+      }
+      
+      subtitleElement.innerHTML = '';
+      typeChar();
+    }
+    
+    // Initialize typewriter effect when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      typeContactTitle();
+    });
+    
+        function initMap() {
       const location = { lat: 27.7172, lng: 85.3240 };
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 14,
-        center: location,
-        styles: [
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 14,
+                center: location,
+                styles: [
           { "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{"color": "#444444"}] },
           { "featureType": "landscape", "elementType": "all", "stylers": [{"color": "#eaf6fb"}] },
           { "featureType": "poi", "elementType": "all", "stylers": [{"visibility": "off"}] },
@@ -271,39 +315,39 @@
           { "featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{"visibility": "off"}] },
           { "featureType": "transit", "elementType": "all", "stylers": [{"visibility": "off"}] },
           { "featureType": "water", "elementType": "all", "stylers": [{"color": "#5dade2"}, {"visibility": "on"}] }
-        ]
-      });
-      const marker = new google.maps.Marker({
-        position: location,
-        map: map,
+                ]
+            });
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
         title: "YuwaTech HQ",
-        icon: {
-          url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-        }
-      });
-      const infoWindow = new google.maps.InfoWindow({
+                icon: {
+                    url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                }
+            });
+            const infoWindow = new google.maps.InfoWindow({
         content: "<strong>YuwaTech HQ</strong><br>Kathmandu, Nepal"
-      });
-      marker.addListener("click", () => {
-        infoWindow.open(map, marker);
-      });
-    }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-      if (!name || !email || !message) {
-        alert('Please fill in all required fields.');
-        return;
-      }
-      alert('Thank you for your message! We will get back to you soon.');
-      this.reset();
-    });
-  </script>
+            });
+            marker.addListener("click", () => {
+                infoWindow.open(map, marker);
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
 </body>
-</html> 
+</html>
